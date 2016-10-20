@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        // "outDir": "app", ;// I disabled becuase of errors underline reds in editor
+        // "outDir": "app", ;// I disabled because of errors underline reds in editor
         "rootDir": "app",
         "module": "commonjs",
         "target": "es5",
