@@ -24,7 +24,7 @@ import {
 } from "../shared";
 
 // import {Lib} from "../Lib";
-// import {AppStore} from "angular2-redux-util";
+import {AppStore} from "angular2-redux-util";
 // import notify from "../NotifyReducer";
 
 @Component({
@@ -45,9 +45,9 @@ export class LoginComponent implements OnInit {
     @ViewChild("email") email: ElementRef;
     @ViewChild("password") password: ElementRef;
 
-    constructor(private router: Router, private userService: LoginService, private page: Page) {
+    constructor(private router: Router, private userService: LoginService, private page: Page, private appStore: AppStore) {
 
-        //private appStore: AppStore
+
 
         this.user = new User();
         this.user.email = "user@nativescript.org";
