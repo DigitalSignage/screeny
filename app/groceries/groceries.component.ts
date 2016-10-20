@@ -65,6 +65,7 @@ export class GroceriesComponent implements OnInit {
 
   add(target: string) {
     // If showing recent groceries the add button should do nothing.
+    console.log('22222')
     if (this.isShowingRecent) {
       return;
     }
