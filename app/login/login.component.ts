@@ -51,18 +51,9 @@ export class LoginComponent implements OnInit {
         this.user.password = "password";
         console.log(appStore);
 
-        // var a = Lib.StoreFactory({notify});
-        // console.log(a);
-        // this.appStore.sub((value) => {
-        //     console.log(value);
-        // }, 'notify');
-        //
-        // this.appStore.dispatch({
-        //     type: 'FOO',
-        //     payload: 'BAR'
-        // });
-
-
+        this.appStore.sub((value) => {
+            console.log('AAAAAAAAAAAAAAAAAA' + value);
+        }, 'notify');
     }
 
     ngOnInit() {
@@ -74,6 +65,12 @@ export class LoginComponent implements OnInit {
     }
 
     submit() {
+
+         this.appStore.dispatch({
+            type: 'FOO',
+            payload: 'BAR'
+        });
+
         if (!this.user.isValidEmail()) {
             alert("Enter a valid email address.");
             return;

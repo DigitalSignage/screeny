@@ -39,7 +39,7 @@ function counter(state, action) {
 var providing = [{
     provide: AppStore,
     useFactory: Lib.StoreFactory({
-        counter
+        notify
     })
 }];
 

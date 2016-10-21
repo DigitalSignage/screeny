@@ -20,23 +20,10 @@ import {AppStore} from "angular2-redux-util";
 // import * as _ from "lodash";
 // import * as xml2js from "xml2js";
 // import * as moment_ from "moment";
-
 //import {LoggerMiddleware} from "angular2-redux-util";
 //import {BusinessUser} from "./business/BusinessUser";
 //import * as thunkMiddleware from 'redux-thunk';
-
 // export const moment = moment_["default"];
-
-
-// var redux = require("redux");
-var photos = require('./photos-duck');
-var counter = require('./counter-duck');
-var reduceReducers = require('reduce-reducers');
-
-var reducer = reduceReducers(
-    photos.reducer,
-    counter.reducer
-);
 
 
 
@@ -45,18 +32,16 @@ export class Lib {
 
     static StoreFactory(reducerList: Object) {
         return () => {
-
             const reducers = combineReducers(reducerList);
-            var store = createStore(reducer);
-
+            // var store = createStore(reducer);
             // const reducers = combineReducers({reducerList});
             // const middlewareEnhancer = applyMiddleware();
-            // // const middlewareEnhancer = applyMiddleware(<any>thunkMiddleware);
-            // const enhancers = compose(middlewareEnhancer);
-            // const createStoreWithEnhancers = enhancers(createStore);
-            // // const reduxAppStore = createStoreWithEnhancers(reducerList);
-            // // return new AppStore(reduxAppStore);
-            return new AppStore(store);
+            const middlewareEnhancer = applyMiddleware(<any>thunkMiddleware);
+            const enhancers = compose(middlewareEnhancer);
+            const createStoreWithEnhancers = enhancers(createStore);
+            const reduxAppStore = createStoreWithEnhancers(reducers);
+            return new AppStore(reduxAppStore);
+            // return new AppStore(store);
         };
     }
 }
