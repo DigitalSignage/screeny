@@ -5,6 +5,7 @@ app/**/*.js
 hooks/
 lib/
 node_modules/
+**.map
 platforms/
 tmp/
 typings/
