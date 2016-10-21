@@ -49,11 +49,14 @@ export class LoginComponent implements OnInit {
         this.user = new User();
         this.user.email = "user@nativescript.org";
         this.user.password = "password";
-        console.log(appStore);
+        //console.log(appStore);
 
         this.appStore.sub((value) => {
-            console.log('AAAAAAAAAAAAAAAAAA' + value);
+            console.log('notify' + value);
         }, 'notify');
+        this.appStore.sub((value) => {
+            console.log('xxxxx stations' + value);
+        }, 'stations');
     }
 
     ngOnInit() {
@@ -62,6 +65,18 @@ export class LoginComponent implements OnInit {
 
     focusPassword() {
         this.password.nativeElement.focus();
+    }
+
+    test(){
+        this.appStore.dispatch({
+            type: 'FOO',
+            payload: 'BAR'
+        });
+
+        this.appStore.dispatch({
+            type: 'RECEIVE_STATIONS',
+            payload: 'rx stations blaaa'
+        });
     }
 
     submit() {

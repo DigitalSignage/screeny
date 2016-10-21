@@ -36,7 +36,7 @@
     "@angular/platform-browser": "~2.0.2",
     "@angular/platform-browser-dynamic": "~2.0.2",
     "@angular/router": "~3.0.2",
-    "angular2-redux-util": "^0.8.70",
+    "angular2-redux-util": "^0.8.86",
     "email-validator": "1.0.4",
     "everlive-sdk": "1.7.1",
     "immutable": "^3.8.1",

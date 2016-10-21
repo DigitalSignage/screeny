@@ -19,6 +19,7 @@ import {GroceriesModule} from "./groceries/groceries.module";
 setStatusBarColors();
 
 import notify from "./NotifyReducer";
+import {stations} from "./StationReducer";
 import {Lib} from "./Lib";
 import {AppStore} from "angular2-redux-util";
 
@@ -39,7 +40,7 @@ function counter(state, action) {
 var providing = [{
     provide: AppStore,
     useFactory: Lib.StoreFactory({
-        notify
+        notify, stations
     })
 }];
 
