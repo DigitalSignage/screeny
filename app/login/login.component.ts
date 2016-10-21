@@ -46,13 +46,10 @@ export class LoginComponent implements OnInit {
     @ViewChild("password") password: ElementRef;
 
     constructor(private router: Router, private userService: LoginService, private page: Page, private appStore: AppStore) {
-
-
-
         this.user = new User();
         this.user.email = "user@nativescript.org";
         this.user.password = "password";
-        console.log('123');
+        console.log(appStore);
 
         // var a = Lib.StoreFactory({notify});
         // console.log(a);
