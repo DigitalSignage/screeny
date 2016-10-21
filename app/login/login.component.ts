@@ -71,7 +71,6 @@ export class LoginComponent implements OnInit {
     }
 
     test(){
-
         this.ws.search('91301').subscribe((v)=>{
             var data = v.json();
             let jData = JSON.parse(data);
@@ -87,9 +86,6 @@ export class LoginComponent implements OnInit {
             type: 'RECEIVE_STATIONS',
             payload: 'rx stations blaaa'
         });
-
-
-
     }
 
     submit() {
