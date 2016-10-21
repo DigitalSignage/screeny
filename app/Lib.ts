@@ -33,20 +33,14 @@ export class Lib {
     static StoreFactory(reducerList: Object) {
         return () => {
 
-            //const reducers = combineReducers(reducerList);
-            //const middlewareEnhancer = applyMiddleware(<any>thunkMiddleware, LoggerMiddleware); // to enable logger
+            const reducers = combineReducers({reducerList});
             // const middlewareEnhancer = applyMiddleware(<any>thunkMiddleware);
             // const enhancers = compose(middlewareEnhancer);
             // const createStoreWithEnhancers = enhancers(createStore);
             // const reduxAppStore = createStoreWithEnhancers(reducerList);
             // return new AppStore(reduxAppStore);
 
-            // const reducers = combineReducers(reducerList);
-            //const middlewareEnhancer = applyMiddleware(<any>thunkMiddleware, LoggerMiddleware); // to enable logger
-            // const middlewareEnhancer = applyMiddleware(<any>thunkMiddleware);
-            // const enhancers = compose(middlewareEnhancer);
-            // const createStoreWithEnhancers = enhancers(createStore);
-            // const reduxAppStore = createStoreWithEnhancers(reducers);
+
             return new AppStore(reducerList);
         };
     }
