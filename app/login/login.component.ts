@@ -25,12 +25,14 @@ import {
 
 // import {Lib} from "../Lib";
 import {AppStore} from "angular2-redux-util";
+import {WeatherService} from "../WeatherService";
 // import notify from "../NotifyReducer";
 
 @Component({
     selector: "gr-login",
     templateUrl: "login/login.component.html",
-    styleUrls: ["login/login-common.css", "login/login.component.css"]
+    styleUrls: ["login/login-common.css", "login/login.component.css"],
+    providers: [WeatherService]
 })
 export class LoginComponent implements OnInit {
     user: User;
@@ -45,7 +47,8 @@ export class LoginComponent implements OnInit {
     @ViewChild("email") email: ElementRef;
     @ViewChild("password") password: ElementRef;
 
-    constructor(private router: Router, private userService: LoginService, private page: Page, private appStore: AppStore) {
+    constructor(private router: Router, private ws:WeatherService,
+                private userService: LoginService, private page: Page, private appStore: AppStore) {
         this.user = new User();
         this.user.email = "user@nativescript.org";
         this.user.password = "password";
@@ -68,6 +71,13 @@ export class LoginComponent implements OnInit {
     }
 
     test(){
+
+        this.ws.search('91301').subscribe((v)=>{
+            var data = v.json();
+            let jData = JSON.parse(data);
+            console.log('weather ' + data);
+        });
+
         this.appStore.dispatch({
             type: 'FOO',
             payload: 'BAR'
@@ -77,6 +87,9 @@ export class LoginComponent implements OnInit {
             type: 'RECEIVE_STATIONS',
             payload: 'rx stations blaaa'
         });
+
+
+
     }
 
     submit() {

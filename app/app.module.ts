@@ -1,6 +1,9 @@
 import {NativeScriptModule} from "nativescript-angular/platform";
 import {NgModule} from "@angular/core";
 import {NativeScriptRouterModule} from "nativescript-angular/router";
+import {NativeScriptFormsModule} from "nativescript-angular/forms";
+import {NativeScriptHttpModule} from "nativescript-angular/http";
+
 
 import {
     authProviders,
@@ -23,6 +26,7 @@ import {stations} from "./StationReducer";
 import {Lib} from "./Lib";
 import {AppStore} from "angular2-redux-util";
 
+
 function counter(state, action) {
     if (typeof state === 'undefined') {
         return 0
@@ -40,13 +44,14 @@ function counter(state, action) {
 var providing = [{
     provide: AppStore,
     useFactory: Lib.StoreFactory({
-        notify, stations
+        notify,
+        stations
     })
 }];
 
 @NgModule({
     providers: [BackendService, LoginService, authProviders, providing],
-    imports: [NativeScriptModule, NativeScriptRouterModule, NativeScriptRouterModule.forRoot(appRoutes), LoginModule, GroceriesModule,],
+    imports: [NativeScriptModule, NativeScriptFormsModule, NativeScriptHttpModule, NativeScriptRouterModule, NativeScriptRouterModule.forRoot(appRoutes), LoginModule, GroceriesModule,],
     declarations: [AppComponent,],
     bootstrap: [AppComponent]
 })
