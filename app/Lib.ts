@@ -34,13 +34,12 @@ export class Lib {
         return () => {
 
             const reducers = combineReducers({reducerList});
+            const middlewareEnhancer = applyMiddleware();
             // const middlewareEnhancer = applyMiddleware(<any>thunkMiddleware);
-            // const enhancers = compose(middlewareEnhancer);
+            const enhancers = compose(middlewareEnhancer);
             // const createStoreWithEnhancers = enhancers(createStore);
             // const reduxAppStore = createStoreWithEnhancers(reducerList);
             // return new AppStore(reduxAppStore);
-
-
             return new AppStore(reducerList);
         };
     }
