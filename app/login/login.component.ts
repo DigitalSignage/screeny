@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
             var data = v.json();
             let jData = JSON.parse(data);
             console.log('weather 2' + data);
-            console.log('weather 4');
+            console.log('weather 5');
         });
 
         this.appStore.dispatch({

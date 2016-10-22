@@ -5,7 +5,7 @@
     scaleY="1.4"
     class="background"
     (loaded)="startBackgroundAnimation(background)"></GridLayout>
-
+   ns
   <StackLayout #initialContainer
     class="initial-container">
     <Image
@@ -64,6 +64,8 @@
       [isEnabled]="!isAuthenticating"
       class="submit-button"
       (tap)="submit()"></Button>
+
+    <Switch [checked]="">AAA</Switch>
 
     <Button
             [text]="'run test'"
