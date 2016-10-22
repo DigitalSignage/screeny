@@ -1,22 +1,22 @@
 {
-  "name": "Groceries",
-  "version": "1.0.0",
-  "description": "A NativeScript-built iOS and Android app for managing grocery lists",
+  "name": "screeny",
+  "version": "0.0.1",
+  "description": "DigitalSignage.com mobile screen manager",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nativescript/sample-Groceries.git"
+    "url": "https://github.com/born2net/screeny"
   },
   "keywords": [
-    "NativeScript"
+    "NativeScript, Digital Signage"
   ],
-  "author": "TJ VanToll <tj.vantoll@gmail.com> (https://www.tjvantoll.com/)",
+  "author": "Sean Levy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nativescript/sample-Groceries/issues"
+    "url": "https://github.com/born2net/screeny"
   },
-  "homepage": "https://github.com/nativescript/sample-Groceries/groceries",
+  "homepage": "http://www.digitalsignage.com",
   "nativescript": {
-    "id": "org.nativescript.groceries",
+    "id": "com.digitalsignage.srceeny",
     "tns-android": {
       "version": "2.3.0"
     },
@@ -41,6 +41,7 @@
     "everlive-sdk": "1.7.1",
     "immutable": "^3.8.1",
     "nativescript-angular": "~1.0.2",
+    "nativescript-appinfo": "^0.2.2",
     "nativescript-iqkeyboardmanager": "1.0.1",
     "nativescript-social-share": "1.3.1",
     "nativescript-unit-test-runner": "^0.3.3",
