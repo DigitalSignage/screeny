@@ -74,7 +74,8 @@ export class LoginComponent implements OnInit {
         this.ws.search('91301').subscribe((v)=>{
             var data = v.json();
             let jData = JSON.parse(data);
-            console.log('weather ' + data);
+            console.log('weather 2' + data);
+            console.log('weather 4');
         });
 
         this.appStore.dispatch({

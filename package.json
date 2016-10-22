@@ -16,7 +16,7 @@
   },
   "homepage": "http://www.digitalsignage.com",
   "nativescript": {
-    "id": "com.digitalsignage.srceeny",
+    "id": "org.nativescript.groceries",
     "tns-android": {
       "version": "2.3.0"
     },
