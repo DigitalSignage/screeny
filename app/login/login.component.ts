@@ -26,6 +26,7 @@ import {
 // import {Lib} from "../Lib";
 import {AppStore} from "angular2-redux-util";
 import {WeatherService} from "../WeatherService";
+import {Button} from "ui/button";
 // import notify from "../NotifyReducer";
 
 @Component({
@@ -46,23 +47,29 @@ export class LoginComponent implements OnInit {
     @ViewChild("signUpStack") signUpStack: ElementRef;
     @ViewChild("email") email: ElementRef;
     @ViewChild("password") password: ElementRef;
+    @ViewChild("myButton") myButton: ElementRef;
 
     constructor(private router: Router, private ws:WeatherService,
                 private userService: LoginService, private page: Page, private appStore: AppStore) {
         this.user = new User();
         this.user.email = "user@nativescript.org";
         this.user.password = "password";
-        //console.log(appStore);
+        console.log(appStore);
+        console.log(page);
+       
 
         this.appStore.sub((value) => {
             console.log('notify' + value);
         }, 'notify');
         this.appStore.sub((value) => {
             console.log('xxxxx stations' + value);
+            console.log('xxxxx stations' + value);
+            console.log('xxxxx stations' + value);
         }, 'stations');
     }
 
     ngOnInit() {
+        console.log('22');
         this.page.actionBarHidden = true;
     }
 
@@ -71,6 +78,10 @@ export class LoginComponent implements OnInit {
     }
 
     test(){
+         (this.myButton.nativeElement as Button).text = String(Math.random());
+         (this.myButton.nativeElement as Button).backgroundColor = new Color('#3b3323');
+         //<Button>(this.myButton.nativeElement).text = String(Math.random());
+
         this.ws.search('91301').subscribe((v)=>{
             var data = v.json();
             let jData = JSON.parse(data);
@@ -176,6 +187,11 @@ export class LoginComponent implements OnInit {
             backgroundColor: this.isLoggingIn ? new Color("white") : new Color("#301217"),
             duration: 200
         });
+    }
+
+    onTap(event){
+        console.log(event.target);
+        console.log(this.page.isLoaded);
     }
 
     startBackgroundAnimation(background) {

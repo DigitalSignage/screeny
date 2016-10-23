@@ -59,16 +59,16 @@
         rowSpan="2"></ActivityIndicator>
     </GridLayout>
 
+
     <Button
       [text]="isLoggingIn ? 'Login' : 'Sign up'"
       [isEnabled]="!isAuthenticating"
       class="submit-button"
       (tap)="submit()"></Button>
 
-    <Switch [checked]="">AAA</Switch>
+    <Switch (tap)="onTap($event)" [checked]=""></Switch>
 
-    <Button
-            [text]="'run test'"
+    <Button #myButton
             class="submit-button"
             (tap)="test()"></Button>
 
